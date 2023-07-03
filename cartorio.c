@@ -171,6 +171,7 @@ int main()
 		printf("\t1 - Registrar Novos Alunos");
 		printf("\t2 - Consultar Nomes");
 		printf("\t3 - Deletar Cadastros");
+		printf("\t4 - Sair do Sistema");
 		printf("\n\n");
 	
 		printf("Opção: ");
@@ -191,6 +192,11 @@ int main()
 			
 			case 3:
 			deleta();
+			break;
+			
+			case 4:
+			printf("Obrigado por utilizar o sistema!\n");
+			return 0;
 			break;
 			
 			default:
