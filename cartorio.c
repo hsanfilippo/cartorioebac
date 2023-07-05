@@ -148,6 +148,8 @@ int main()
 {	
 	int menu_choice; //declara variavel sem valor, pode atribuir valor prévio com " = "
 	int laco=1;
+	char scanPass[]="a";
+	int passComp;
 	
 	for(laco=1; laco=1;)
 	{
@@ -166,45 +168,71 @@ int main()
 		printf("\t\t     Escola Britânica de Artes Criativas e Tecnologia \n\n");
 	
 		printf("\t\t\t\t--- Cartório da EBAC ---\n\n"); // sempre finalizar ação com ;
-	
-		printf("\t\t\t   Escolha uma opção para prosseguir: \n\n");
-		printf("\t1 - Registrar Novos Alunos");
-		printf("\t2 - Consultar Nomes");
-		printf("\t3 - Deletar Cadastros");
-		printf("\t4 - Sair do Sistema");
-		printf("\n\n");
-	
-		printf("Opção: ");
-		scanf("%d", &menu_choice); //scanf = coleta dados pelo teclado do usuário
-							  
-		system("cls"); //funcao para limpar os textos do terminal
+		printf("\t\t\t   ##### Login de administrador #####\n\nDigite sua senha: ");
+		scanf("%s",scanPass);
 		
+		passComp = strcmp(scanPass, "ademir");
 		
-		switch(menu_choice)
+		if(passComp == 0)
 		{
-			case 1:
-			registro();
-			break;
+			system("cls");
 			
-			case 2:
-			consulta();
-			break;
+			printf("\t\t    ##################################################\n");
+			printf("\t\t    #### @@@@@@ ## @@@@@ ####### @@@@@ #### @@@@@ ####\n");
+			printf("\t\t    #### @@ ###### @@  @@@ #### @@  @@ ## @@ #########\n");
+			printf("\t\t    #### @@@@ #### @@@@@ ##### @@@@@@@ ## @@ #########\n");
+			printf("\t\t    #### @@ ###### @@  @@@ ## @@  # @@ ## @@ #########\n");
+			printf("\t\t    #### @@@@@@ ## @@@@@ ### @@  ## @@ ###  @@@@@ ####\n");
+			printf("\t\t    ##################################################\n");
+			printf("\t\t     Escola Britânica de Artes Criativas e Tecnologia \n\n");
+	
+			printf("\t\t\t\t--- Cartório da EBAC ---\n\n");
+			printf("\t\t\t   Escolha uma opção para prosseguir: \n\n");
+			printf("1 - Registrar Novos Alunos");
+			printf("\t2 - Consultar Nomes");
+			printf("\t3 - Deletar Cadastros");
+			printf("\t4 - Sair do Sistema");
+			printf("\n\n");
+	
+			printf("Opção: ");
+			scanf("%d", &menu_choice); //scanf = coleta dados pelo teclado do usuário
+							  
+			system("cls"); //funcao para limpar os textos do terminal
+		
+		
+			switch(menu_choice)
+			{
+				case 1:
+				registro();
+				break;
 			
-			case 3:
-			deleta();
-			break;
+				case 2:
+				consulta();
+				break;
 			
-			case 4:
-			printf("Obrigado por utilizar o sistema!\n");
-			return 0;
-			break;
+				case 3:
+				deleta();
+				break;
 			
-			default:
-			printf("Esta opção não está disponível!\n\n");
-			system("pause");
-			break;
-		}
+				case 4:
+				printf("Obrigado por utilizar o sistema!\n");
+				return 0;
+				break;
+			
+				default:
+				printf("Esta opção não está disponível!\n\n");
+				system("pause");
+				break;
+			}
 
-		//printf("\n\n\nSoftware de uso livre para fins de estudo. Nenhum direito reservado. 2023");
+		printf("\n\n\nSoftware de uso livre para fins de estudo. Nenhum direito reservado. 2023");
+		}
+		
+		else 
+		{
+		printf("YOU SHALL NOT PASS!, digite novamente.\n\n");
+		system("pause");
+		}
+		
 	}
 }
