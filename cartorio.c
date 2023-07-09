@@ -106,11 +106,14 @@ int consulta()
 		printf("Não foi possível localizar o arquivo!\n");
 	}
 	
+	printf("\nEssas são as informações do usuário:\n\n");
+	
 	while(fgets(conteudo, 200, file) != NULL)
 	{
+		
 		printf("%s", conteudo);
 	}
-		printf("\nEssas são as informações do usuário: ");
+	
 	system("pause");
 }
 
